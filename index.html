@@ -12,7 +12,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
-  <title>CheckpointJot</title>
+  <title>Notes</title>
 </head>
 
 <body>
@@ -20,9 +20,8 @@
   <header>
     <nav class="navbar navbar-dark navbar-expand bg-dark text-light px-2">
       <a class="navbar-brand" href="#">
-        <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
-          loading="lazy">
-        <span class="ml-2">CheckpointJot</span>
+
+        <span class="ml-2">Notes</span>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,9 +40,30 @@
   <!-- SECTION -->
   <main>
 
-    <section id="router-view">
-      <!-- primary viewport -->
+    <section class="container-fluid">
+      <div>
+        <h2>Make a new Note!</h2>
+        <form onsubmit="app.noteController.newNote()">
+          <div>
+            <label for="">Name</label>
+            <input type="text" min="3" maxlength="15" name="name" required placeholder="Name of Note...">
+          </div>
+          <div>
+            <label for="">Date</label>
+            <input type="date" name="date" required>
+          </div>
+          <button class="bg-success">Create</button>
+        </form>
+      </div>
+      <div class="bg-white" id="note-view">
+  
+      </div>
     </section>
+    <section class="row">
+      <div id="open-note">
+
+      </div>
+  </section>
 
   </main>
 
