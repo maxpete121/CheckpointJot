@@ -11,6 +11,7 @@ export class Notes{
         this.color = data.color
         this.body = data.body
         this.updateTime = new Date()
+        this.number = data.number
     }
 
     get ShortDate(){

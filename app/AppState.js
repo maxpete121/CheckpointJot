@@ -13,19 +13,22 @@ class ObservableAppState extends EventEmitter {
       date: '10/02/2023',
       color: 'blue',
       body: 'How much wood could a woodchuck chuck if a woodchuck could chuck wood',
-      updateTime: '12/04/2023'
+      updateTime: '12/04/2023',
+      number: 1,
     }),
     new Notes({
       name: 'Grocery List',
       date: '10/04/2023',
       color: 'green',
       body: 'Pears, Milk, Oranges, Grapes, Cheese, Juice, Apples, Pasts, Doritos, Ice, Cat Food',
-      updateTime: '12/07/2023'
+      updateTime: '12/07/2023',
+      number: 2,
     })
   ]
 /**@type {Notes} */
   ActiveNote = null
-
+  /**@type {Notes} */
+  listNumbers = null
 }
 
 export const AppState = createObservableProxy(new ObservableAppState())
