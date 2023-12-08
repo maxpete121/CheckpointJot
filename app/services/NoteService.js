@@ -8,6 +8,9 @@ class NoteService{
 
     lookNote(noteId){
         const NoteNeeded = AppState.Notes.find(note => note.Id == noteId)
+        let editDate = new Date()
+        NoteNeeded.updateTime = editDate
+        console.log(NoteNeeded.updateTime)
         AppState.ActiveNote = NoteNeeded
         console.log(AppState.ActiveNote)
     }
@@ -17,7 +20,19 @@ class NoteService{
         AppState.Notes.push(NewNote)
     }
 
+    deleteNote(noteID){
+        const noteDelete = AppState.Notes.findIndex(note => note.Id == noteID)
+        AppState.Notes.splice(noteDelete, 1)
+        console.log('note',AppState.note)
+
+        
+    }
+
     closeNote(cNoteId){
+        
+    }
+
+    saveNote(){
         
     }
 

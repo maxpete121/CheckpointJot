@@ -41,27 +41,24 @@
   <main>
 
     <section class="container-fluid">
-      <div>
-        <h2>Make a new Note!</h2>
-        <form onsubmit="app.noteController.newNote()">
-          <div>
-            <label for="">Name</label>
-            <input type="text" min="3" maxlength="15" name="name" required placeholder="Name of Note...">
-          </div>
-          <div>
-            <label for="">Date</label>
-            <input type="date" name="date" required>
-          </div>
-          <button class="bg-success">Create</button>
-        </form>
-      </div>
-      <div class="bg-white" id="note-view">
-  
+      <div class="row d-flex flex-column">
+        <div class="col-4 text-center">
+          <h2>Make a new Note!</h2>
+          <span>
+            <button onclick="app.noteController.openMake()">Start</button>
+          </span>
+        </div>
+        <div id="new-note-form" class="col-4">
+
+        </div>
       </div>
     </section>
-    <section class="row">
-      <div id="open-note">
-
+    <section class="row d-flex">
+      <div class="col-5 ms-4" id="note-view">
+  
+      </div>
+      <div class="col-5" id="open-note">
+        <h3>No note selected</h3>
       </div>
   </section>
 

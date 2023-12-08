@@ -1,1 +1,13 @@
 /* BASIC STYLES HERE */
+.formBackground{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: black;
+    padding: 8px;
+    outline: thick solid rgb(194, 194, 194);
+    border-radius: 15px;
+}
+
+.noteCard{
+    width: 100%;
+}
