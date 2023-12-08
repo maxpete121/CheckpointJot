@@ -1,6 +1,7 @@
 import { AppState } from "../AppState.js";
 import { Notes } from "../models/Notes.js";
 import { getFormData } from "../utils/FormHandler.js";
+import { loadState, saveState } from "../utils/Store.js";
 
 
 
@@ -28,12 +29,13 @@ class NoteService{
         
     }
 
-    closeNote(cNoteId){
-        
+    saveApp(){
+        saveState('notes', AppState.Notes)
     }
 
-    saveNote(){
-        
+    loadApp(){
+        let loadNote = loadState('notes',[Notes])
+        AppState.Notes = loadNote
     }
 
 }

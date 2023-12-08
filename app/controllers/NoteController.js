@@ -6,7 +6,10 @@ import { getFormData } from "../utils/FormHandler.js";
 
 export class NoteController{
     constructor(){
+        noteService.loadApp()
+        noteService.saveApp()
         this.drawNotes()
+
         // this.closeNote()
     }
 
@@ -46,6 +49,7 @@ export class NoteController{
         let saveNote = document.getElementById('note-type').value
         const save = AppState.ActiveNote
         save.body = saveNote
+        noteService.saveApp()
     }
 
     deleteNote(noteId){
@@ -53,6 +57,7 @@ export class NoteController{
             noteService.deleteNote(noteId)
         }
         this.drawNotes()
+        noteService.saveApp()
     }
 
     newNote(){
@@ -62,6 +67,7 @@ export class NoteController{
         noteService.newNote(formData)
         this.drawNotes()
         this.closeForm()
+        noteService.saveApp()
     }
 
 
