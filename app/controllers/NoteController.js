@@ -1,5 +1,6 @@
 import { AppState } from "../AppState.js";
 import { noteService } from "../services/NoteService.js";
+import { getFormData } from "../utils/FormHandler.js";
 
 
 
@@ -12,7 +13,7 @@ export class NoteController{
         const allNotes = AppState.Notes
         let template = ''
         allNotes.forEach(note => template += note.NoteTemplate)
-        document.getElementById('note-view').innerHTML += template
+        document.getElementById('note-view').innerHTML = template
     }
 
     drawNoteType(){
@@ -32,5 +33,12 @@ export class NoteController{
         const formData = getFormData(form)
         noteService.newNote(formData)
         this.drawNotes()
+    }
+
+    closeNote(){
+        const content = AppState.Notes
+        let noContent = ''
+        content.find(none => noContent = none.noteClosed)
+        document.getElementById('open-note').innerHTML = noContent
     }
 }

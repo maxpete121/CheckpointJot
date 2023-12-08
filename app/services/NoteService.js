@@ -17,6 +17,10 @@ class NoteService{
         AppState.Notes.push(NewNote)
     }
 
+    closeNote(cNoteId){
+        
+    }
+
 }
 
 

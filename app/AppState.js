@@ -11,7 +11,7 @@ class ObservableAppState extends EventEmitter {
     new Notes({
       name: 'To do list',
       date: '10/02/2023',
-      body: 'How much woo could a woodchuck chuck if a woodchuck could chuck wood'
+      body: 'How much wood could a woodchuck chuck if a woodchuck could chuck wood'
     }),
     new Notes({
       name: 'Grocery List',

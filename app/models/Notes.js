@@ -26,8 +26,19 @@ export class Notes{
 
     get newNoteTemplate(){
         return`
+        <div>
         <h4>${this.name}</h4>
-        <textarea name="Note" id="note-type" cols="30" rows="20">${this.body}</textarea>
+        <textarea name="Note" id="note-type" cols="50" rows="20">${this.body}</textarea>
+        </div>
+        <button>Save</button>
+        <button onclick="app.noteController.closeNote('${this.Id}')">Close</button>
+        <button>Delete</button>
+        `
+    }
+
+    get noteClosed(){
+        return`
+        <h3>No note selected</h3>
         `
     }
 }
