@@ -19,18 +19,50 @@ class NoteService{
     newNote(formData){
         const NewNote = new Notes(formData)
         AppState.Notes.push(NewNote)
+        this.countNote(NewNote)
+        this.saveApp()
+    }
+
+    openMake(){
+
     }
 
     deleteNote(noteID){
         const noteDelete = AppState.Notes.findIndex(note => note.Id == noteID)
         AppState.Notes.splice(noteDelete, 1)
         console.log('note',AppState.note)
+        this.saveApp()
+        
+    }
 
+
+
+
+
+    countNote(NewNote){
+        let noteAdd = AppState.Notes
+        let theCount = noteAdd.length
+        let madeNote = NewNote
+        console.log(NewNote)
+        if(theCount == null){
+            let theCount = 1
+            // let noteNumber = 0
+            // noteNumber += theCount
+            madeNote.number = 0
+            madeNote.number += theCount
+            console.log(noteNumber)
+        }else if(theCount >= 1){
+            console.log('works')
+            madeNote.number = 0
+            madeNote.number += theCount
+
+        }
         
     }
 
     saveApp(){
         saveState('notes', AppState.Notes)
+        console.log()
     }
 
     loadApp(){

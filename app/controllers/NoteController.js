@@ -7,10 +7,14 @@ import { getFormData } from "../utils/FormHandler.js";
 export class NoteController{
     constructor(){
         noteService.loadApp()
-        noteService.saveApp()
         this.drawNotes()
+        noteService.saveApp()
 
         // this.closeNote()
+    }
+
+    countNote(){
+        noteService.countNote()
     }
 
     drawNotes(){
@@ -33,10 +37,12 @@ export class NoteController{
     }
 
     openMake(){
-        const noteCreate = AppState.Notes
+        
+        const noteCreate = AppState.FormTemp
         let content = ''
         noteCreate.find(note => content = note.newNoteFormTemplate)
         document.getElementById('new-note-form').innerHTML = content
+        console.log(content)
     }
 
     closeForm(){

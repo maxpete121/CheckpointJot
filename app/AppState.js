@@ -1,4 +1,5 @@
 import { Notes } from './models/Notes.js'
+import { formTemp } from './models/Notes.js'
 import { EventEmitter } from './utils/EventEmitter.js'
 import { createObservableProxy } from './utils/ObservableProxy.js'
 
@@ -6,6 +7,12 @@ class ObservableAppState extends EventEmitter {
 
   /**@type {import('./models/Example.js').Example[]} */
   examples = []
+
+  FormTemp = [
+    new formTemp({
+      form: 'form',
+    })
+  ]
 
   Notes = [
     new Notes({
@@ -25,6 +32,8 @@ class ObservableAppState extends EventEmitter {
       number: 2,
     })
   ]
+  
+
 /**@type {Notes} */
   ActiveNote = null
   /**@type {Notes} */
