@@ -14,7 +14,12 @@ export class formTemp{
 
     <div class="mt-2 form-control bg-white">
       <label class="fw-bold" for="">Note Color:</label>
-      <input type="color" required name="color" placeholder="Pick a color...">
+      <select type="" required name="color">
+      <option value="blue">Blue</option>
+      <option value="black">Black</option>
+      <option value="darkgreen">Green</option>
+      <option value="purple">Purple</option>
+      </select>
     </div>
     <div class="mt-2 form-control bg-white align-items-baseline">
       <label class="fw-bold" for="">Your Note:</label>
@@ -43,7 +48,9 @@ export class Notes{
     }
 
     get ShortUpdate(){
-        return this.updateTime.toLocaleDateString('en-US', {month: 'short', weekday: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'})
+    return this.updateTime.toLocaleDateString('en-US', {month: 'short', weekday: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'})
+      
+    
     }
 
     get NoteTemplate(){
@@ -65,7 +72,6 @@ export class Notes{
         <span>
         <button onclick="app.noteController.lookNote('${this.Id}')">Open</button>
         <button class="ms-2" onclick="app.noteController.deleteNote('${this.Id}')">Delete</button>
-        <button>Clear</button>
         </span>
         </div> `
     }
@@ -79,6 +85,7 @@ export class Notes{
         <textarea name="Note" id="note-type" cols="50" rows="20">${this.body}</textarea>
         </div>
         <button onclick="app.noteController.saveNote()">Save</button>
+        <button>Clear</button>
         <button onclick="app.noteController.closeNote()">Close</button>
         `
     }

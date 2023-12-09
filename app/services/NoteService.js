@@ -18,6 +18,7 @@ class NoteService{
 
     newNote(formData){
         const NewNote = new Notes(formData)
+        NewNote.date = new Date()
         AppState.Notes.push(NewNote)
         this.countNote(NewNote)
         this.saveApp()
@@ -31,12 +32,52 @@ class NoteService{
         const noteDelete = AppState.Notes.findIndex(note => note.Id == noteID)
         AppState.Notes.splice(noteDelete, 1)
         console.log('note',AppState.note)
+        this.reCount()
         this.saveApp()
         
     }
 
+    reCount(){
+        const notes = AppState.Notes
+        let noteOne = notes[0]
+        if(noteOne != undefined){
+            noteOne.number = 1
+        }
+        let noteTwo = notes[1]
+        if(noteTwo != undefined){
+            noteTwo.number = 2
+        }
+        let noteThree = notes[2]
+        if(noteThree != undefined){
+            noteThree.number = 3
+        }
+        let noteFour = notes[3]
+        if(noteFour != undefined){
+            noteFour.number = 4
+        }
+        let noteFive = notes[4]
+        if(noteFive != undefined){
+            noteFive.number = 5
+        }
+        let noteSix = notes[5]
+        if(noteSix != undefined){
+            noteSix.number = 6
+        }
+        let noteSeven = notes[6]
+        if(noteSeven != undefined){
+            noteSeven.number = 7
+        }
+        let noteEight = notes[7]
+        if(noteEight != undefined){
+            noteEight.number = 8
+        }
+        let noteNine = notes[8]
+        if(noteNine != undefined){
+            noteNine.number = 9
+        }
 
-
+        console.log(noteOne)
+    }
 
 
     countNote(NewNote){

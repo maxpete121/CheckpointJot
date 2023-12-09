@@ -7,6 +7,7 @@ import { getFormData } from "../utils/FormHandler.js";
 export class NoteController{
     constructor(){
         noteService.loadApp()
+        noteService.reCount()
         this.drawNotes()
         noteService.saveApp()
 
